@@ -66,6 +66,7 @@ function searchLocation() {
     console.log(newLocation)
     targetLocation = newLocation
     refreshDashboard(targetLocation)
+    obtenerDatos(newLocation.lat, newLocation.lon)
 }
 
 function getCurrentLocation() {
@@ -113,3 +114,43 @@ function refreshDashboard(location) {
         )
 }
 
+// Esta es la parte donde se integran los codigos adicionales para la calidad del aire desde una API
+//-----------------------------------------------------------------------o--------------------------------------------
+function obtenerDatos(lat,lon) {
+    let apiKey = 'b719b4e1ef2cdee973babc04d670b601';
+
+    let url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        // Almacenar los datos en variables
+        let aqi = data.list[0].main.aqi;
+        let co = data.list[0].components.co;
+        let no = data.list[0].components.no;
+        let no2 = data.list[0].components.no2;
+        let o3 = data.list[0].components.o3;
+        let so2 = data.list[0].components.so2;
+        let pm25 = data.list[0].components.pm2_5;
+        let pm10 = data.list[0].components.pm10;
+        let nh3 = data.list[0].components.nh3;
+
+        // Mostrar valores en la tarjeta
+        document.querySelector('.ph-aqi').textContent = aqi;
+        document.querySelector('.ph-co').textContent = co;
+        document.querySelector('.ph-no').textContent = no;
+        document.querySelector('.ph-no2').textContent = no2;
+        document.querySelector('.ph-o3').textContent = o3;
+        document.querySelector('.ph-so2').textContent = so2;
+        document.querySelector('.ph-pm25').textContent = pm25;
+        document.querySelector('.ph-pm10').textContent = pm10;
+        document.querySelector('.ph-nh3').textContent = nh3;
+    })
+    .catch(error => {
+        console.error('Error al obtener datos:', error);
+        document.getElementById('resultado').innerHTML = 'Error al obtener datos';
+    });
+}
+
+// Llama a la función para obtener los datos cuando el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', obtenerDatos);

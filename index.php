@@ -155,30 +155,51 @@
                         <div class="card-qualitat-aire card bg-dark bg-gradient">
                             <div class="card-body d-flex flex-column gap-3">
                                 <div class="d-flex flex-row justify-content-between align-items-center">
-                                    <span class="card-text-titol card-text">Qualitat de l'aire</span>
-                                    <span class="badge rounded-pill text-bg-warning">Pobra</span>
-                                </div>
+                                <span class="card-text-titol card-text">Qualitat de l'aire</span>
+                                <span class="badge rounded-pill text-bg-warning" id="calidad-aire">Cargando...</span>
+                                </div>                              
                                 <div class="d-flex flex-row justify-content-around align-items-center">
-                                    <i class="card-icon bi bi-clipboard-data"></i>
-                                    <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
-                                        <span class="card-text-variable card-text">PM25</span>
-                                        <span class="ph-pm25 card-text-mesura card-text">--</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
-                                        <span class="card-text-variable card-text">SO2</span>
-                                        <span class="ph-so2 card-text-mesura card-text">--</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
-                                        <span class="card-text-variable card-text">NO2</span>
-                                        <span class="ph-no2 card-text-mesura card-text">--</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
-                                        <span class="card-text-variable card-text">O3</span>
-                                        <span class="ph-o3 card-text-mesura card-text">--</span>
-                                    </div>
+                                <i class="card-icon bi bi-clipboard-data"></i>
+                                <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                    <span class="card-text-variable card-text">AQI</span>
+                                    <span class="ph-aqi card-text-mesura card-text">--</span>
                                 </div>
-                            </div>
+                                <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                    <span class="card-text-variable card-text">CO</span>
+                                    <span class="ph-co card-text-mesura card-text">--</span>
+                                </div>
+                                <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                    <span class="card-text-variable card-text">NO</span>
+                                    <span class="ph-no card-text-mesura card-text">--</span>
+                                </div>
+                                <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                    <span class="card-text-variable card-text">NO2</span>
+                                    <span class="ph-no2 card-text-mesura card-text">--</span>
+                                </div>
+                                <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                    <span class="card-text-variable card-text">O3</span>
+                                    <span class="ph-o3 card-text-mesura card-text">--</span>
+                                </div>
+                                <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                    <span class="card-text-variable card-text">SO2</span>
+                                    <span class="ph-so2 card-text-mesura card-text">--</span>
+                                </div>
+                                <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                    <span class="card-text-variable card-text">PM2.5</span>
+                                    <span class="ph-pm25 card-text-mesura card-text">--</span>
+                                </div>
+                                <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                    <span class="card-text-variable card-text">PM10</span>
+                                    <span class="ph-pm10 card-text-mesura card-text">--</span>
+                                </div>
+                                <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                    <span class="card-text-variable card-text">NH3</span>
+                                    <span class="ph-nh3 card-text-mesura card-text">--</span>
+                                </div>
+                                </div>
+                            </div>  
                         </div>
+                        
                         <!-- Card: Sortida i posta de sol -->
                         <div class="card-sol card bg-dark bg-gradient">
                             <div class="card-body d-flex flex-column gap-3">
